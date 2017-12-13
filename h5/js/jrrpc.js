@@ -22,8 +22,8 @@ var api_server = 'http://47.104.24.85:8090';
 jQuery.extend({
     //ajax扩展
     JsonRpc: function(param, successFunc) {
-        // var url = api_server+'/shareContents?shareId='+param.shareId+'&type='+param.type;
-        var url = 'http://train.api.livestaring.com/v004/tests/shareContents?shareId='+param.shareId+'&type='+param.type;
+        var url = api_server+'/shareContents?shareId='+param.shareId+'&type='+param.type;
+        // var url = 'http://train.api.livestaring.com/v004/tests/shareContents?shareId='+param.shareId+'&type='+param.type;
         $.ajax({
             type: "get",
             url: url,
