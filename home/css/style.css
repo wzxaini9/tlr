@@ -1,0 +1,114 @@
+*{padding: 0; margin: 0;}
+@font-face{
+	font-family:PingFang;
+	src: url('../font/PingFang Regular.ttf');
+    src:
+        url('../font/PingFang Regular.woff') format('woff'),
+        url('../font/PingFang Regular.ttf') format('truetype'),
+        url('../font/PingFang Regular.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+html{font-size: 50px;}
+body{font-size: 24px; font-family:PingFang;}
+a{text-decoration: none;}
+ul,li,ol,textarea{list-style: none; text-decoration: none;}
+
+/*首页开始*/
+
+@media only screen and (min-width:750px ) {
+	body{overflow: hidden;}
+	.warp{width:100%;height:auto; overflow:hidden;}
+	.warp_contain{ position: relative; width: 100%; height: auto; overflow: hidden; min-width: 1440px;}
+	.warp_bg img{width: 100%; display: block; }
+	.mwarp_bg{ display: none;}
+	.warp_word{ position: absolute; width: 33%; left: 10%; top:5%; height: auto;overflow: hidden;}
+	.warp_word_title{ width: 100%; height: auto;overflow: hidden;}
+	.warp_word_title img{ display: block; float: left;}
+	.warp_word_title span{display: block; float: left; height: 114px; line-height: 114px; font-size: 57px; color: #576E98; margin-left: 2%;}
+	.warp_word_item1{font-size: 52px; color: #f43764; line-height: 70px; margin-top: 20%; margin-bottom: 10%;}
+	.warp_word_item2{font-size: 28px; color:#576E98 ; margin-bottom: 3%;}
+	.warp_word_item3 a {display: block; float:left; height: 66px; width: 216px; background: url(../img/web_button.png) no-repeat center; line-height: 66px; font-size: 18px; color: #576E98;cursor: pointer; }
+	.warp_word_item3 a:first-child{margin-right: 28px;}
+	.warp_word_item3 a:first-child:before{content: url(../img/apple.png);display:block; float: left; height: 29px; width: 25px; margin: 5px 20px 0px 24px;}
+	.warp_word_item3 a:last-child:before{content: url(../img/android.png); display: block; float: left; height: 27px; width: 23px; margin:5px 20px 0px 24px;}
+
+	.warp_img{ position: absolute; width: 20%; right: 25%; top: 5%;}
+	.warp_img img{width: 100%;}
+	.warp_video{position: absolute; width: 89%;top: 10.88%;left: 6.01%;}
+	.warp_footer_web{position: absolute; width: 100%; left: 10%; top:63%  ;color:#576E98 ; font-size: 14px;}
+	.warp_footer{position: absolute; width: 100%; left: 10%; top: 65% ;color:#576E98 ; font-size: 14px;}
+	.warp_footer a{color: #576E98; display: inline-block; margin-right: 20px; cursor: pointer;}
+	.warp_footer a:hover{color: #2C4064;}
+	.mwarp_word{display: none;}
+	.mwarp_img{display: none;}
+}
+
+
+
+@media screen and (min-device-width: 100px) and (max-device-width: 750px) {
+	body{font-family:PingFang; font-weight:bold; height: 100%;}
+	.warp{width:100%;height:auto; overflow:hidden;}
+	.warp_contain{height: 100%; width: 100%; min-width: 100px; position: relative;}
+	.warp_bg{display:none; display: block;}
+	.warp_word{display: none;}
+	.warp_img{display: none;}
+	.mwarp_bg{display: block; width: 100%;}
+	.mwarp_bg img{width: 100%;}
+	.mwarp_word{display: block; position: absolute; width: 100%; top:1rem; height: auto;overflow: hidden;}
+	.mwarp_word_title{height: auto; overflow: hidden; width: 100%;  padding-left: 0.76rem;}
+	.mwarp_word_title img{ display: block; float: left; width:1.16rem}
+	.mwarp_word_title span{height: 1.16rem; font-size: 0.72rem; line-height: 1.16rem; display: block;float: left; margin-left: 0.1rem; color:#576E98 ;}
+	.mwarp_word_item1{ width: 100%; text-align: center;font-size: 1.44rem; color: #576E98; line-height: 1.8rem; margin-top: 0.2rem; padding-bottom: 4%; letter-spacing:2px;}
+
+	.mwarp_word_item3{width:8rem; margin: 0.2rem auto; position:relative;}
+	.mwarp_word_item3 img{ width: 8rem;}
+	.mwarp_word_item3 a{position:absolute; left:0; top:0; display: block;   height: 1.92rem; width: 8rem; line-height: 1.92rem; font-size: 0.56rem; color: #576E98;cursor: pointer;  font-weight: bold;}
+	.mwarp_word_item3 a:before{content: "";display:block; float: left; height: 1.16rem; width: 0.96rem; background: url(../img/iPhone_apple.png);    margin: 0.34rem 0.6rem 0 0.76rem; background-size: 100%;}
+
+	.mwarp_img{ display: block; position: absolute; width: 60%; right: 20%; top: 26%;}
+	.mwarp_img img{width: 100%;}
+	.mwarp_img .mwarp_video{position: absolute; position: absolute;width: 90%;left: 5.9%;top: 10.5%;}
+	.warp_footer{width: 100%;position: absolute;bottom: 10%;  left: 0px; text-align: center; line-height: 0.76rem; font-size: 0.4rem; color: rgb(154,172,204); }
+	.warp_footer a{width: 100%; text-align: center;color: rgb(154,172,204);}
+	.warp_footer span{display: block; width: 100%; text-align: center;}
+}
+/*首页结束*/
+
+/*关于我们 开始*/
+
+@media only screen and (min-width:750px ) {
+	body{overflow: hidden;}
+	.warp{width:100%;height:auto; overflow:hidden;}
+	.warp_bg img{width: 100%; display: block;}
+	.about_word{position: absolute; width: 49%; left: 10%; top: 17%; height: auto;overflow: hidden; font-family: PingFang;font-size: 21px; color:#576E98;   line-height: 34px; font-weight:bold;}
+	.about_word p{margin-top: 2%;}
+	.about_ew{position: absolute; left: 10%;  top:47% ;width: 180px; height: 180px; }
+	.about_ew img{ display: block; height: 100%; width: 100%; }
+	.mabout_word{display: none}
+}
+
+
+
+@media screen and (min-device-width: 100px) and (max-device-width: 750px) {
+	body{font-family:PingFang; font-weight:bold;}
+	.warp{width:100%;height:auto; overflow:hidden;}
+	.warp_contain{height: 100%; width: 100%; min-width: 100px; position: relative;}
+	.warp_bg{display:none;}
+	.warp_word{display: none;}
+	.warp_img{display: none;}
+	.mwarp_bg{display: block; width: 100%;}
+	.mwarp_bg img{width: 100%; display: block;}
+	.mwarp_word{display: block; position: absolute; width: 100%; top:1rem; height: auto;overflow: hidden;}
+	.mwarp_word_title{height: auto; overflow: hidden; width: 100%;  padding-left: 0.76rem;}
+	.mwarp_word_title img{ display: block; float: left; width:1.16rem}
+	.mwarp_word_title span{height: 1.16rem; font-size: 0.72rem; line-height: 1.16rem; display: block;float: left; margin-left: 0.1rem; color:#576E98 ;}
+	.about_word{display: none;}
+	.mabout_word{display: block; position: absolute; top: 5rem; padding: 0px 0.9rem; font-size: 0.56rem; color: #576E98;}
+	.mabout_word p{ line-height: 0.9rem;  margin-top:0.5rem ;}
+	.about_ew{position: absolute; right:1.22rem ; left: 9.16rem; top:17.84rem;width: 4.62rem; height: 4.62rem;}
+	.about_ew img{ height: 100%; width: 100%;}
+	
+}
+
+/*关于我们 结束*/
