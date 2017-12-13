@@ -1,0 +1,53 @@
+*{padding: 0; margin: 0;}
+@font-face{
+	font-family:PingFang;
+	src: url('../font/PingFang Regular.ttf');
+    src:
+        url('../font/PingFang Regular.eot?#font-spider') format('embedded-opentype'),
+        url('../font/PingFang Regular.woff') format('woff'),
+        url('../font/PingFang Regular.ttf') format('truetype'),
+        url('../font/PingFang Regular.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+html{font-size: 50px;}
+body{font-size: 24px; font-family:PingFang,'微软雅黑','Arial',"Microsoft YaHei";max-width: 720px;margin: 0 auto;}
+a{text-decoration: none;}
+ul,li,ol,textarea{list-style: none; text-decoration: none;}
+video::-internal-media-controls-download-button {display:none;}
+video::-webkit-media-controls-enclosure {overflow:hidden;}
+video::-webkit-media-controls-panel {width: calc(100% + 35px);}
+
+.imag{position: relative;margin: 0 auto;margin-bottom: 2rem;}
+.imshar{position: absolute;z-index: 100;left: 0;right: 0;top: 0;bottom: 0;opacity: 0;}
+.imag img{display: block;width: 100%;}
+
+/*分享列表开始*/
+.m_warp{height: auto; width: 100%; overflow: hidden; }
+.m_content{height: auto;overflow: hidden;}
+.m_content a{display: block; width: 100%; height:40%; margin-bottom: 1rem;}
+.m_content a:last-child{margin: 0px;}
+.m_content a img{display: block; height: 100%; width: 100%;}
+.m_footer_warp{position: fixed; left: 0; bottom: 0;width: 100%;background: rgba(100,100,100,0.7);height: auto;overflow: hidden; z-index: 111}
+.m_footer{width: 100%; margin: 0 auto;  padding: 0.2rem 0px; height: auto;overflow: hidden; }
+.m_footer img{display: block;float: left; height: 1.8rem; width: 1.8rem;  padding-left: 0.6rem; padding-right: 0.6rem;}	
+.m_footer p{display: block;float: left; color: #FFFFFF;font-size: 0.5rem;line-height: 0.9rem;}
+.m_footer a{display: block;float: left; border: 2px solid #fdd715; color: #fdd715; text-align: center;font-size: 0.5rem; padding:0rem 1rem;border-radius: 1rem;height: 1.2rem;line-height: 1.2rem; margin-left: 2.16rem; margin-top: 0.2rem;}
+
+/*分享内容开始*/
+.m{width: 100%; overflow: hidden;}
+.video-js{ width: 100%;}
+.m_zan{font-size: 0.52rem; text-align: center; margin: 0.5rem 0rem; color: #5e6673;}
+.m_some{color: #5e6673;  width: 86%; margin: 1rem auto;}
+.m_some p:first-child{ font-size: 0.6rem;}
+.m_some p:nth-child(2){font-size: 0.52rem;}
+.m_some p:last-child{font-size: 0.52rem; margin-top: 1rem; line-height: 0.9rem;}
+@media screen and (min-device-width:751px) and (max-device-width: 1920px) {
+body{overflow:auto;}
+.m_content, .m_footer_warp{/*max-width:1000px;*/margin:0 auto;}
+.m_content a{display:block;float:left; margin:0 106px 50px 0;}
+.m_content a:nth-child(even){ margin-right:0;} 
+.m_footer img{width:1rem;height:1rem;}
+.m_footer p{ font-size:0.3rem;line-height:0.5rem;}
+.m_footer a{display: block; float: right;font-size: 0.3rem; padding:0rem 0.5rem;border-radius: 1rem;height:0.6rem;line-height: 0.6rem;margin-right: 0.6rem;}
+}

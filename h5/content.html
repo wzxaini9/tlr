@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>贴脸儿-分享-视频</title>
+		<link rel="stylesheet" href="css/style.css" />
+		<meta name="keywords" content="贴脸儿">
+		<meta name="description" content="乐活云购（北京）科技有限公司">
+		<meta name="author" content="Powerless">
+		<meta http-equiv="X-UA-Compatible" ;content="IE=edge, chrome=1">
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<!--兼容移动设备-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<script src="js/jquery-1.7.2.min.js"></script>
+	</head>
+
+	<body>
+		<div class="m_warp">
+			<div class="m" id="video">
+                <video id="my-video" class="video-js" controls preload="auto" width="100%" data-setup="{}" poster="">
+                </video>
+			</div>
+			<div class="m_zan" id="author"></div>
+			<div class="m_some" id="content"></div>
+            <div class="m_footer_warp">
+                <div class="m_footer">
+                    <img src="img/m_logo.png" />
+                    <p>贴脸儿<br/>海量优质内容等你来看</p>
+                    <a id="down" class="m_down" href="#">下载软件</a>
+                </div>
+            </div>
+		</div>
+	</body>
+    <script src="js/mui.min.js"></script>
+    <script src="js/jrrpc.js"></script>
+	<script>
+        $(function(){
+            mui.init();
+            var shareId = iService.getQueryString('shareId');
+            if(!shareId){
+                alert('未知的ID',' ');
+                return false;
+            }else{
+                if(iService.getUserAgent().isiOS){
+                    var href = "https://itunes.apple.com/us/app/%E8%B4%B4%E8%84%B8%E5%84%BF/id1252934263?mt=8";
+                    $('#down').attr('href',href);
+                }else if(iService.getUserAgent().isAndroid){
+                    var href = "http://a.app.qq.com/o/simple.jsp?pkgname=com.iseeyou.dailyflash";
+                    $('#down').attr('href',href);
+                }else{
+                    var href = "http://www.tielianer.com";
+                    $('#down').attr('href',href);
+                }
+            }
+            var date = {
+                shareId:shareId,
+                type:'5'
+            };
+            $.JsonRpc(date,function(result){
+                console.log(result);
+                var forumList = result.res[0];
+                if(forumList){
+                    var src = file_server+forumList.fileUrl;
+                    var poster = file_server+forumList.coverUrl;
+                    $('#my-video').attr('poster',poster);
+                    $("#my-video").live("contextmenu",function(){return false;});
+                    $('<source src="'+ src +'" type="video/mp4">').appendTo('#my-video');
+                    $('<span>视频</span><span>'+forumList.author+'</span>').appendTo('#author');
+                    $('<p>'+forumList.title+'</p><p>'+forumList.subTitle+'</p><p>'+forumList.introduce+'</p>').appendTo('#content');
+                }
+                var myPlayer = videojs('my-video');
+                videojs("my-video").ready(function(){
+                    var myPlayer = this;
+                    myPlayer.play();
+                });
+            });
+        });
+	</script>
+</html>
